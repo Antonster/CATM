@@ -1,0 +1,12 @@
+.image-editor,
+.cropper-modal {
+	background-color: white !important;
+}
+
+.sProfileChangePhoto__pointer {
+	cursor: pointer;
+}
+
+.upload-avatar-file {
+	display: none;
+}

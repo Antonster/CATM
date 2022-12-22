@@ -1,0 +1,8 @@
+.user-edit-icon {
+	margin-right: 10px;
+}
+
+.user-edit__wrapper {
+	color: var(--bs-primary);
+	cursor: pointer;
+}

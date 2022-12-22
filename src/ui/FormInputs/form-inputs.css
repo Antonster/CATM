@@ -1,0 +1,64 @@
+.form-input-error__wrapper {
+	display: flex;
+	position: absolute;
+	bottom: -2px;
+	color: var(--bs-danger);
+	font-size: 12px;
+	padding-left: 2px;
+}
+
+.form-input-error__wrapper IMG {
+	margin-right: 8px;
+}
+
+.form-input-error__wrapper SPAN {
+	display: block;
+	padding-top: 3px;
+}
+
+.form-input-remove__wrapper {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	width: calc(50% - 12px);
+}
+
+.input-file-info__name {
+	font-size: 14px;
+	background-color: #fff;
+	color: var(--bs-gray-900);
+	font-weight: 600;
+	border: none;
+}
+
+.file-uploader__wrapper {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 24px;
+}
+
+.file-uploader-inputs__wrapper {
+	display: flex;
+}
+
+.btn,
+.input-file__button,
+.sWorkPermitCard__signed,
+.special-menu__add-btn {
+	padding: 12px 17px 13px;
+}
+
+.init-file-info__wrapper {
+	display: flex;
+}
+
+.upload-avatar-label {
+	display: block;
+	margin-bottom: 16px;
+}
+
+.upload-avatar-file {
+	visibility: hidden;
+	height: 0;
+}

@@ -1,0 +1,33 @@
+.feedback-wrapper {
+	width: 100%;
+}
+
+.feedback-form {
+	padding: 24px;
+}
+
+.feedback-form-wrapper {
+	display: flex;
+}
+
+.feedback-left-part {
+	margin: 0 24px 0 0;
+	width: 360px;
+}
+
+.feedback-right-part {
+	width: calc(100% - 24px - 360px);
+}
+
+.feedback-wrapper .form-group {
+	position: relative;
+}
+
+.feedback-wrapper .input-error {
+	position: absolute;
+	bottom: -18px;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	color: #b00b0b;
+}

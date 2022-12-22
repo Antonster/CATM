@@ -1,0 +1,19 @@
+.pagination-wrapper .page-numbers {
+	cursor: pointer;
+}
+
+.pagination-wrapper .page-numbers.active {
+	cursor: default;
+	font-weight: bold;
+	color: var(--bs-primary);
+}
+
+.pagination-wrap__count {
+	display: flex;
+	align-items: center;
+	margin: 0 24px 0 0;
+}
+
+.pagination-wrap__count-text {
+	margin: 0 12px 0 0;
+}

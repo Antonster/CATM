@@ -1,0 +1,45 @@
+.person-documents-item {
+	padding-left: 16px;
+}
+.person-block__change {
+	color: var(--bs-primary);
+	cursor: pointer;
+}
+.person-block__change:hover {
+	color: #155bcb;
+}
+p.person-block-phone {
+	color: #2a2e40;
+}
+.person-block__qr {
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	margin: 0;
+}
+.person-block__name-wrapper {
+	width: 100%;
+	margin: 0 0 15px;
+}
+.person-block__name {
+	width: 100%;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 33px;
+	text-align: center;
+	color: #2a2d3f;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.person-documents-item__list-item:before {
+	top: calc(50% - 10px);
+}
+.generate-text {
+	margin: 12px 0 0;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	text-align: center;
+	color: #888888;
+}

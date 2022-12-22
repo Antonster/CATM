@@ -1,0 +1,54 @@
+.person-block__avatar picture img {
+	max-width: none;
+}
+.person-block__avatar {
+	overflow: hidden;
+}
+.person-block__avatar picture img {
+	border-radius: 0;
+}
+.person-block__avatar-small {
+	margin-bottom: 0;
+	margin-right: 18px;
+}
+.person-block__avatar-small .avatar-name {
+	font-size: 16px;
+	width: 40px;
+	height: 40px;
+}
+.person-block__avatar-small picture {
+	width: 40px;
+	height: 40px;
+}
+.employee-list-item__person picture {
+	margin-right: 0;
+}
+
+.person-block__avatar-xs {
+	margin-bottom: 0;
+	margin-right: 0;
+}
+.person-block__avatar-xs .avatar-name {
+	font-size: 14px;
+	width: 32px;
+	height: 32px;
+}
+.person-block__avatar-xs picture {
+	width: 32px;
+	height: 32px;
+}
+.person-block__avatar-medium {
+	width: 56px;
+	height: 56px;
+	margin-bottom: 0;
+	margin-right: 0;
+}
+.person-block__avatar-medium .avatar-name {
+	font-size: 22px;
+	width: 56px;
+	height: 56px;
+}
+.person-block__avatar-medium picture {
+	width: 56px;
+	height: 56px;
+}

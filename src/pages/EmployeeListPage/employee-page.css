@@ -1,0 +1,41 @@
+.employee-list-item__person {
+	max-width: calc(100% - 527px);
+}
+
+.employee-list-item__name {
+	cursor: pointer;
+	color: #155bcb;
+}
+
+.employee-block__list-menu-link {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.employees-grid-list {
+	display: grid;
+	grid-template-columns: 4fr 2fr 2fr 1fr 1fr;
+}
+
+.create-user-button {
+	display: flex;
+	align-items: center;
+	padding: 0 !important;
+	margin: 0 0 15px;
+	color: #1a72fe;
+}
+
+.create-user-button:hover {
+	color: #1a72fe;
+}
+
+.create-user-button > img {
+	margin: 0 16px 0 0;
+}
+
+@media (min-width: 1400px) {
+	.employee-list-item__person {
+		max-width: calc(100% - 567px) !important;
+	}
+}

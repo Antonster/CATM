@@ -1,0 +1,237 @@
+.person-documents-item {
+	padding-left: 16px;
+}
+
+.person-block__change {
+	color: var(--bs-primary);
+	cursor: pointer;
+}
+
+.person-block__change:hover {
+	color: #155bcb;
+}
+
+p.person-block-phone {
+	color: #2a2e40;
+}
+
+.special-menu__body {
+	margin-bottom: 30px;
+}
+
+.form-wrap__input-caption {
+	bottom: 30px;
+}
+
+.input-mask {
+	background-color: #fff;
+	border: 1px solid #e0e0e0;
+	border-radius: 10px;
+	font-size: 14px;
+	padding: 14px 17px;
+	flex-grow: 1;
+	margin-bottom: 0;
+	margin-right: 8px;
+}
+
+.input-mask:focus,
+.form-select:focus {
+	background-color: #fff;
+	border-color: #8db9ff;
+	box-shadow: none;
+	color: #2a2d3f;
+	outline: 0;
+}
+
+.middle-title {
+	margin-bottom: 10px;
+	margin-top: 30px;
+}
+
+.employee-permit picture {
+	min-width: unset;
+	margin-right: 0;
+}
+
+.react-datepicker {
+	display: flex !important;
+	border: unset !important;
+	font-family: var(--bs-body-font-family) !important;
+	font-size: 12px !important;
+}
+
+.react-datepicker-popper div:nth-child(4) > div.react-datepicker__month {
+	border-right: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+.date-block__input::placeholder {
+	color: inherit;
+	font-size: inherit;
+}
+
+.react-datepicker__header {
+	background-color: inherit !important;
+	border-bottom: unset !important;
+}
+
+.react-datepicker__current-month {
+	color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.react-datepicker__day-name {
+	color: rgba(0, 0, 0, 0.6) !important;
+	text-transform: uppercase;
+}
+
+.react-datepicker__day:hover,
+.react-datepicker__month-text:hover,
+.react-datepicker__quarter-text:hover,
+.react-datepicker__year-text:hover,
+.react-datepicker__day--selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range,
+.react-datepicker__month-text--selected,
+.react-datepicker__month-text--in-selecting-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--selected,
+.react-datepicker__quarter-text--in-selecting-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--selected,
+.react-datepicker__year-text--in-selecting-range,
+.react-datepicker__year-text--in-range {
+	border-radius: 2rem !important;
+	background-color: var(--bs-primary) !important;
+	color: white !important;
+}
+
+.upload-file-wrap.small {
+	width: 358px;
+}
+
+.upload-file-wrap.small > .upload-file-wrap__info {
+	width: calc(100% - 42px - 16px);
+}
+
+.upload-file-wrap__delete {
+	cursor: pointer;
+}
+
+.create-permit-input:disabled {
+	background-color: #1a72fe !important;
+	border-color: #1a72fe !important;
+	color: white !important;
+}
+
+.file-error {
+	font-family: "Museo Sans Cyrl";
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	color: #b00b0b;
+}
+
+.form-wrap__input-wrap.small {
+	width: 358px;
+}
+
+.special-menu__inner-wrapper {
+	padding: 24px 24px 60px;
+}
+
+.permit-type-title {
+	margin-bottom: 18px;
+}
+
+.permit-type-item__head {
+	align-items: center;
+	margin: 0;
+}
+
+.permit-type-item {
+	border: 1px solid transparent;
+	width: 100%;
+}
+
+.permit-type-item.active {
+	border: 1px solid #1a72fe;
+	background: #ffffff;
+}
+
+.permit-type-item.active .permit-type-item__title {
+	color: #1a72fe;
+}
+
+.index-filter-block__reset {
+	cursor: pointer;
+}
+
+.employee-permit {
+	display: block;
+}
+
+.permit-brigade .employee-permit__info {
+	max-width: calc(100% - 56px - 36px - 16px - 36px);
+}
+
+.permit-brigade .sNewPermit__brigade-squad-wrapper {
+	height: calc(100vh - 344px);
+	overflow-y: auto;
+}
+
+.permit-brigade .sNewPermit__brigade-squad-wrapper::-webkit-scrollbar-track {
+	border: transparent;
+	background-color: transparent;
+}
+
+.permit-brigade .sNewPermit__brigade-squad-wrapper::-webkit-scrollbar {
+	width: 0;
+	background: transparent;
+}
+
+.permit-brigade .sNewPermit__brigade-squad-wrapper::-webkit-scrollbar-thumb {
+	border: 0;
+	background: transparent;
+}
+
+.sNewPermit__brigade-squad-wrapper.without-input {
+	height: calc(100vh - 269px);
+}
+
+.permit-brigade .sNewPermit__brigade {
+	padding: 0;
+}
+
+.permit-brigade {
+	padding: 0;
+}
+
+.briefing-modal {
+	margin: 0;
+}
+
+.loader {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 60px;
+	width: 100%;
+	margin: 0 0 15px;
+}
+
+.employee-permit__health-tooltip {
+	font-family: "Museo Sans Cyrl";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	max-width: 180px;
+}
+
+@media (max-width: 1320px) {
+	.data-input-wrap {
+		flex-wrap: wrap;
+	}
+	.input-mask {
+		margin-right: 0 !important;
+		margin-bottom: 8px !important;
+	}
+}

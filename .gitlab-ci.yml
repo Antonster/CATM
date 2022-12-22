@@ -1,0 +1,87 @@
+# Set up the docker container for build docker images
+image: docker:stable-dind
+
+# CI stages
+stages:
+  - Build
+  - Deploy
+
+before_script:
+  # Authorize in Docker Registry (Continer Registry)
+  - echo -n $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
+  # Get HEAD of commit
+  - apk add --no-cache git && 
+    SHORT_HEAD=$(git rev-parse --short=8 HEAD)
+
+Build_Development:
+  stage: Build
+  only:
+    - develop
+  script:
+    # Build image with tag with commit
+    - docker build --rm --cache-from $CI_REGISTRY_IMAGE/$CI_COMMIT_BRANCH:latest -t $CI_REGISTRY_IMAGE/$CI_COMMIT_BRANCH:$SHORT_HEAD --build-arg REACT_APP_API_URL=$ENV_REACT_APP_API_URL --build-arg REACT_APP_NOTIFICATIONS_SOCKET=$REACT_APP_NOTIFICATIONS_SOCKET -f docker/nginx.Dockerfile .
+    # Push image
+    - docker push $CI_REGISTRY_IMAGE/$CI_COMMIT_BRANCH:$SHORT_HEAD
+    # Change tag with commit on latest
+    - docker tag $CI_REGISTRY_IMAGE/$CI_COMMIT_BRANCH:$SHORT_HEAD $CI_REGISTRY_IMAGE/$CI_COMMIT_BRANCH:latest
+    # Push image
+    - docker push $CI_REGISTRY_IMAGE/$CI_COMMIT_BRANCH:latest
+    # Delete older images from build node
+    - docker rmi -f $CI_REGISTRY_IMAGE/$CI_COMMIT_BRANCH:$SHORT_HEAD
+
+Build_Demo:
+  stage: Build
+  only:
+    - release
+  script:
+    # Build image with tag with commit
+    - docker build --rm --cache-from $CI_REGISTRY_IMAGE/$CI_COMMIT_BRANCH:latest -t $CI_REGISTRY_IMAGE/$CI_COMMIT_BRANCH:$SHORT_HEAD --build-arg REACT_APP_API_URL=$ENV_REACT_APP_API_URL_DEMO --build-arg REACT_APP_NOTIFICATIONS_SOCKET=$REACT_APP_NOTIFICATIONS_SOCKET_DEMO -f docker/nginx.Dockerfile .
+    # Push image
+    - docker push $CI_REGISTRY_IMAGE/$CI_COMMIT_BRANCH:$SHORT_HEAD
+    # Change tag with commit on latest
+    - docker tag $CI_REGISTRY_IMAGE/$CI_COMMIT_BRANCH:$SHORT_HEAD $CI_REGISTRY_IMAGE/$CI_COMMIT_BRANCH:latest
+    # Push image
+    - docker push $CI_REGISTRY_IMAGE/$CI_COMMIT_BRANCH:latest
+    # Delete older images from build node
+    - docker rmi -f $CI_REGISTRY_IMAGE/$CI_COMMIT_BRANCH:$SHORT_HEAD
+
+Deploy_Development:
+  stage: Deploy
+  only:
+    # Build only on the branch 'develop'
+    - develop # Like development environment
+  # Set up the docker container for connection to the destination host and deploy project
+  image: alpine:latest
+  before_script:
+  # Configure the SSH client
+  # Install the SSH client
+  - apk add --quiet openssh-client
+  # Initialize the SSH agent
+  - eval `ssh-agent -s`
+  # Add the SSH private key (add it in the CI Variables in the project settings) to the docker container (public key must be added on the destiantion host)
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+  script:
+    # Pull image from Docker Registry (Container Registry) and recreate container wih new image
+    - ssh -o StrictHostKeyChecking=no catm@catm.msharks.ru "cd ~/catm.msharks.ru &&
+      docker pull $CI_REGISTRY_IMAGE/develop:latest && 
+      docker-compose up -d nginx"
+
+Deploy_Demo:
+  stage: Deploy
+  only:
+    - release # Like development environment
+  # Set up the docker container for connection to the destination host and deploy project
+  image: alpine:latest
+  before_script:
+  # Configure the SSH client
+  # Install the SSH client
+  - apk add --quiet openssh-client
+  # Initialize the SSH agent
+  - eval `ssh-agent -s`
+  # Add the SSH private key (add it in the CI Variables in the project settings) to the docker container (public key must be added on the destiantion host)
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+  script:
+    # Pull image from Docker Registry (Container Registry) and recreate container wih new image
+    - ssh -o StrictHostKeyChecking=no catm@demo.catm.msharks.ru "cd ~/demo.catm.msharks.ru &&
+      docker pull $CI_REGISTRY_IMAGE/release:latest && 
+      docker-compose up -d nginx"

@@ -1,0 +1,6 @@
+.form-footer__children-wrapper {
+	margin-right: 30px;
+	font-size: 20px;
+	font-weight: 600;
+	color: var(--bs-gray-700);
+}

@@ -1,0 +1,339 @@
+body {
+	margin: 0;
+	font-family: "Museo Sans Cyrl", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+		"Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+.person-block__avatar picture {
+	display: flex;
+	overflow: hidden;
+	height: 160px;
+	width: 160px;
+	justify-content: center;
+}
+.person-block__avatar {
+	border-radius: 50%;
+}
+.person-block p {
+	display: block;
+	text-align: center;
+}
+.disabled {
+	display: block;
+	position: relative;
+}
+.disabled::before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	cursor: default;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.iframe_document__wrapper {
+	width: 100%;
+	height: calc(100vh - 70px);
+}
+.iframe_document__wrapper BODY {
+	margin: 0;
+}
+.upload-file-wrap__title {
+	word-wrap: break-word;
+}
+.select-arrow {
+	background: url("../public/img/svg/blue-arrow.svg") no-repeat center center;
+	background-size: 10px 8px;
+	width: 20px;
+	height: 20px;
+}
+.prev-btn {
+	display: flex;
+	cursor: pointer;
+}
+
+*::placeholder {
+	color: rgba(136, 136, 136, 0.5) !important;
+	font-family: "Museo Sans Cyrl", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+		"Helvetica Neue", sans-serif !important;
+	-webkit-font-smoothing: antialiased;
+}
+
+input {
+	font-family: "Museo Sans Cyrl", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+		"Helvetica Neue", sans-serif !important;
+	-webkit-font-smoothing: antialiased;
+}
+
+.search-block__search {
+	transition: all 0.4s;
+}
+
+.search-block__search:focus {
+	border-color: #8db9ff !important;
+	outline: none;
+}
+
+.topLine__notifications {
+	height: auto;
+}
+
+.topLine__notifications .icon {
+	height: 30px;
+	max-height: 30px;
+	width: 24px;
+	max-width: 24px;
+	cursor: pointer;
+}
+
+.notifications-container {
+	position: absolute;
+	transition: all 0.4s;
+	background: #ffffff;
+	box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25);
+	border-radius: 16px;
+	width: 375px;
+	z-index: 10000;
+	top: 40px;
+	right: -73px;
+	padding: 24px 10px 24px 24px;
+	height: calc(100vh - 65px - 24px);
+}
+
+.notifications-header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 0 24px;
+	padding: 0 14px 0 0;
+}
+
+.notifications-header__title {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 28px;
+	color: #2a2d3f;
+}
+
+.notifications-header__clear {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	color: #1a72fe;
+	cursor: pointer;
+	transition: all 0.4s;
+}
+
+.notifications-header__clear:hover {
+	opacity: 0.5;
+}
+
+.notifications-content {
+	width: 100%;
+	height: calc(100% - 52px);
+	overflow-y: auto;
+	padding: 0 10px 0 0;
+}
+
+.notifications-content::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background-color: #f5f5f5;
+}
+
+.notifications-content::-webkit-scrollbar {
+	width: 6px;
+	background: #e7e7e7;
+}
+
+.notifications-content::-webkit-scrollbar-thumb {
+	border-radius: 15px;
+	background: #b3b3b3;
+}
+
+.notifications-item {
+	padding: 16px;
+	background: #f5f5f5;
+	border-radius: 10px;
+}
+
+.notifications-item:not(:last-child) {
+	margin: 0 0 10px;
+}
+
+.notifications-item__link {
+	width: 100%;
+}
+
+.notifications-item__close {
+	padding: 0 !important;
+	height: 20px;
+	transition: all 0.4s;
+}
+
+.notifications-item__close:hover {
+	opacity: 0.5;
+}
+
+.notifications-item__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 0 10px;
+}
+
+.notifications-item__status {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: calc(100% - 22px - 12px);
+}
+
+.notifications-item__date {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	color: #888888;
+}
+
+.notifications-item__type {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	color: #888888;
+	padding: 4px 8px;
+	border-radius: 4px;
+	border: 1px solid transparent;
+}
+
+.notifications-item__type.document_expired_user {
+	background: #e0e0e0;
+}
+
+.notifications-item__type.briefing_worker_invite,
+.notifications-item__type.document_expired_director {
+	background: #dbe9ff;
+}
+
+.notifications-item__type.work_permit_signer_invite {
+	border: 1px solid #888888;
+}
+
+.notifications-item__type.briefing_invite,
+.notifications-item__type.briefing_should_to_sign {
+	background: #ffffff;
+}
+
+.notifications-item__header svg {
+	vertical-align: unset;
+}
+
+.notifications-item__title {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 20px;
+	color: #000000;
+	margin: 0 0 10px;
+}
+
+.notifications-item__description {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	color: #000000;
+	margin: 0 0 10px;
+}
+
+.notifications-empty {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	color: #888888;
+}
+
+.sInWork {
+	height: calc(100vh - 65px);
+	padding: 0;
+}
+
+.sInWork__link {
+	color: #1a72fe;
+}
+
+.generate-common-document {
+	margin: 0 0 28px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.generate-button {
+	display: flex;
+	align-items: center;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.generate-button-icon {
+	margin: 0 8px 0 0;
+}
+
+.common-document {
+	margin: 0 10px 0;
+}
+
+.common-main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 0 10px;
+	width: calc(202px - 36px);
+}
+
+.common-main > .icon-file {
+	width: 13px;
+	margin: 0 8px 0 0;
+}
+
+.common-main > span {
+	font-size: 12px;
+	line-height: 16px;
+	font-style: normal;
+	font-weight: 400;
+	color: #1a72fe;
+}
+
+.common-date {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	text-align: center;
+	color: #888888;
+}
+
+.person-documents-item__button-wrap {
+	max-width: 205px;
+	min-width: 205px;
+	width: 205px;
+}
+
+.person-documents-item .btn-with-icon {
+	margin: 0;
+	font-size: 12px;
+	line-height: 16px;
+	font-style: normal;
+	font-weight: 400;
+	color: #1a72fe;
+}

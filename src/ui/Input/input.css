@@ -1,0 +1,21 @@
+.input-wrapper {
+	position: relative;
+	margin-bottom: 24px;
+}
+
+.form-error__wrapper {
+	position: absolute;
+	bottom: -22px;
+	color: var(--bs-danger);
+}
+
+.form-control[disabled] {
+	background-color: rgb(242, 242, 242) !important;
+	border: 1px solid rgb(224, 224, 224);
+	outline: 0px !important;
+	color: rgba(69, 69, 69, 0.5);
+}
+
+.form-control.error {
+	border-color: #b00b0b;
+}
